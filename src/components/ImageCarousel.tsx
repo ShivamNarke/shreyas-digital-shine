@@ -1,29 +1,27 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import solarBanner from "@/assets/solar-banner.jpg";
-import tv from "@/assets/tv.jpg";
-import electrical from "@/assets/electrical.png";
+
+
 
 const images = [
 
   {
-    src: solarBanner,
+    src: "/solar-banner.jpg",
     title: "Solar Energy Solutions",
     subtitle: "Harness the power of the sun for a sustainable future",
   },
   {
-    src: tv,
+    src: "/tv.jpg",
     title: "Latest Electronics",
     subtitle: "Discover cutting-edge technology and devices",
   },
   {
-    src: heroBg,
+    src: "/hero-bg.jpg",
     title: "Professional Services",
     subtitle: "Quality products and expert installations",
   },
   {
-    src: electrical,
+    src: "/electrical2.png",
     title: "Electrical Services",
     subtitle: "Reliable electrical products for every need",
   },

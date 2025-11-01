@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Sun } from "lucide-react";
-import solarBanner from "@/assets/solar-banner.jpg";
 import { DollarSign, Leaf, TrendingUp } from "lucide-react";
 const SolarServices = () => {
   const [products, setProducts] = useState([]);
@@ -46,7 +45,7 @@ const SolarServices = () => {
 
             <div className="animate-slide-up">
               <img
-                src={solarBanner}
+                src="/solar-banner.jpg"
                 alt="Solar Solutions"
                 className="rounded-lg shadow-2xl"
               />

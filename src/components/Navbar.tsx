@@ -10,7 +10,7 @@ import {
 } from "./ui/dropdown-menu";
 import { useAuth } from "../contexts/AuthContext";
 import AddProductModal from "./AddProductModal";
-import logo from "../assets/logo3.png";
+
 import Login from '@/pages/Login';
 import Signup from '@/pages/Signup';
 const Navbar = () => {
@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-6">
-            <img src={logo} alt="Shreyas Enterprises Logo" className="h-10 w-auto" />
+            <img src="/logo3.png" alt="Shreyas Enterprises Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

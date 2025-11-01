@@ -47,7 +47,7 @@ const ElectronicsServices = () => {
 
             <div className="animate-slide-up">
               <img
-                src="/src/assets/electronics.jpg"
+                src="/electronics.jpg"
                 alt="Electronics"
                 className="rounded-lg shadow-2xl"
               />

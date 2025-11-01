@@ -79,7 +79,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <img className="h-7 w-7" src="src/assets/facebook.png" alt="Facebook" />
+                  <img className="h-7 w-7" src="/facebook.png" alt="Facebook" />
                 </a>
                 <a
                   href="https://www.instagram.com/bajiraojadhav1983?igsh=MW14MTJreDZvbTBzYQ=="
@@ -87,7 +87,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <img className="h-7 w-7" src="src/assets/instagram.png" alt="Instagram" />
+                  <img className="h-7 w-7" src="/instagram.png" alt="Instagram" />
                 </a>
                 <a
                   href="https://wa.me/919923269825"
@@ -95,7 +95,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <img className="h-7 w-7" src="src/assets/whatsapp.png" alt="Whatsapp" />
+                  <img className="h-7 w-7" src="/whatsapp.png" alt="Whatsapp" />
                 </a>
               </div>
             </div>

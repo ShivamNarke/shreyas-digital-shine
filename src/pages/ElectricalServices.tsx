@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
-import electricalBanner from "@/assets/electrical2.png";
 import { Award, Wrench } from "lucide-react";
 
 const ElectricalServices = () => {
@@ -47,7 +46,7 @@ const ElectricalServices = () => {
 
             <div className="animate-slide-up">
               <img
-                src={electricalBanner}
+                src="/electrical2.png"
                 alt="Electrical Products"
                 className="rounded-lg shadow-2xl"
               />

@@ -69,21 +69,21 @@ const Index = () => {
               description="Harness clean, renewable energy with our state-of-the-art solar panel installations and energy management systems."
               icon={<Sun className="h-6 w-6" />}
               link="/solar"
-              image={"/src/assets/solar-banner.jpg"}
+              image={"/solar-banner.jpg"}
             />
             <ServiceCard
               title="Mahalaxmi Electronics"
               description="Discover the latest consumer electronics, from smartphones to home appliances, all backed by expert support."
               icon={<Smartphone className="h-6 w-6" />}
               link="/electronics"
-              image={"/src/assets/electronics.jpg"}
+              image={"/electronics.jpg"}
             />
             <ServiceCard
               title="Mahalaxmi Electrical"
               description="Premium quality electrical equipment and components for residential and commercial applications."
               icon={<Zap className="h-6 w-6" />}
               link="/electrical"
-              image={"/src/assets/electrical.png"}
+              image={"/electrical.png"}
             />
           </div>
         </div>
