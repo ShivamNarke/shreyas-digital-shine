@@ -54,6 +54,37 @@ const SolarServices = () => {
         </div>
       </section>
 
+
+
+      {/* Products Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Our Solar <span className="gradient-text">Products</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Choose from our range of premium solar products and services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <ProductCard
+                key={product.product_id || index}
+                productId={product.product_id}
+                title={product.product_name}
+                description={product.description}
+                icon={<Sun className="h-6 w-6" />}
+                image={product.product_image}
+                link={product.product_link}
+                category={product.category}
+                onRefresh={fetchProducts}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Benefits Section */}
       <section className="py-12 px-4 bg-card">
         <div className="container mx-auto text-center space-y-6">
@@ -92,36 +123,6 @@ const SolarServices = () => {
                 Increase your property value by 3-4% with a solar installation
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Our Solar <span className="gradient-text">Products</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choose from our range of premium solar products and services
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <ProductCard
-                key={product.product_id || index}
-                productId={product.product_id}
-                title={product.product_name}
-                description={product.description}
-                icon={<Sun className="h-6 w-6" />}
-                image={product.product_image}
-                link={product.product_link}
-                category={product.category}
-                onRefresh={fetchProducts}
-              />
-            ))}
           </div>
         </div>
       </section>

@@ -28,6 +28,37 @@ const ElectricalServices = () => {
     <div className="min-h-screen">
       <Navbar />
 
+
+      {/* Products Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Our <span className="gradient-text">Products & Services</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive electrical solutions for every need
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <ProductCard
+                key={product.product_id || index}
+                productId={product.product_id}
+                title={product.product_name}
+                description={product.description}
+                icon={<Zap className="h-6 w-6" />}
+                image={product.product_image}
+                link={product.product_link}
+                category={product.category}
+                onRefresh={fetchProducts}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4">
         <div className="container mx-auto">
@@ -93,36 +124,6 @@ const ElectricalServices = () => {
                 Comprehensive safety inspections and compliance with electrical codes
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Our <span className="gradient-text">Products & Services</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive electrical solutions for every need
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <ProductCard
-                key={product.product_id || index}
-                productId={product.product_id}
-                title={product.product_name}
-                description={product.description}
-                icon={<Zap className="h-6 w-6" />}
-                image={product.product_image}
-                link={product.product_link}
-                category={product.category}
-                onRefresh={fetchProducts}
-              />
-            ))}
           </div>
         </div>
       </section>
