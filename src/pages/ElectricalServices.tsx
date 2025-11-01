@@ -27,6 +27,32 @@ const ElectricalServices = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 px-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold">
+                <span className="gradient-text">Electrical</span> Products & Services
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Premium quality electrical equipment and components for residential and
+                commercial applications. From lighting solutions to complete electrical
+                installations, we ensure safety and reliability in every product.
+              </p>
+
+            </div>
+
+            <div className="animate-slide-up">
+              <img
+                src="/electrical2.png"
+                alt="Electrical Products"
+                className="rounded-lg shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* Products Section */}
@@ -59,32 +85,6 @@ const ElectricalServices = () => {
         </div>
       </section>
 
-      {/* Hero Section */}
-      <section className="pt-24 pb-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold">
-                <span className="gradient-text">Electrical</span> Products & Services
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Premium quality electrical equipment and components for residential and
-                commercial applications. From lighting solutions to complete electrical
-                installations, we ensure safety and reliability in every product.
-              </p>
-
-            </div>
-
-            <div className="animate-slide-up">
-              <img
-                src="/electrical2.png"
-                alt="Electrical Products"
-                className="rounded-lg shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Standards Section */}
       <section className="py-12 px-4 bg-card">
