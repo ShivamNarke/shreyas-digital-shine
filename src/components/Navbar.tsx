@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -13,6 +13,7 @@ import AddProductModal from "./AddProductModal";
 
 import Login from '@/pages/Login';
 import Signup from '@/pages/Signup';
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -30,24 +31,48 @@ const Navbar = () => {
     setSignupModalOpen(false);
     setLoginModalOpen(true);
   };
+
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-6">
             <img src="/logo3.png" alt="Shreyas Enterprises Logo" className="h-10 w-auto" />
           </Link>
 
+          {/* RIGHT SIDE — Location + Hamburger (mobile only) */}
+          <div className="flex items-center space-x-2 md:hidden">
+
+            {/* Mobile Location Button */}
+            <Button
+              variant="ghost"
+              className="p-2"
+              onClick={() => {
+                window.open("https://maps.app.goo.gl/d2a9PjhA73JXk8io9", "_blank");
+              }}
+            >
+              <MapPin className="w-5 h-5" />
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-foreground p-2"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+          </div>
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-16">
             <Link
               to="/"
-              className={`transition-colors ${isActive("/")
-                ? "text-primary font-semibold"
-                : "text-muted-foreground hover:text-foreground"
+              className={`transition-colors ${isActive("/") ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Home
@@ -62,26 +87,25 @@ const Navbar = () => {
                 <DropdownMenuItem asChild>
                   <Link
                     to="/solar"
-                    className={`w-full ${isActive("/solar") ? "text-primary font-semibold" : ""
-                      }`}
+                    className={`w-full ${isActive("/solar") ? "text-primary font-semibold" : ""}`}
                   >
                     Solar Solutions
                   </Link>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem asChild>
                   <Link
                     to="/electronics"
-                    className={`w-full ${isActive("/electronics") ? "text-primary font-semibold" : ""
-                      }`}
+                    className={`w-full ${isActive("/electronics") ? "text-primary font-semibold" : ""}`}
                   >
                     Electronics
                   </Link>
                 </DropdownMenuItem>
+
                 <DropdownMenuItem asChild>
                   <Link
                     to="/electrical"
-                    className={`w-full ${isActive("/electrical") ? "text-primary font-semibold" : ""
-                      }`}
+                    className={`w-full ${isActive("/electrical") ? "text-primary font-semibold" : ""}`}
                   >
                     Electrical Products
                   </Link>
@@ -91,9 +115,7 @@ const Navbar = () => {
 
             <Link
               to="/privacy"
-              className={`transition-colors ${isActive("/privacy")
-                ? "text-primary font-semibold"
-                : "text-muted-foreground hover:text-foreground"
+              className={`transition-colors ${isActive("/privacy") ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"
                 }`}
             >
               Privacy Policy
@@ -132,30 +154,6 @@ const Navbar = () => {
               </>
             )}
           </div>
-
-          {/* Modals - always rendered */}
-          {!isLoggedIn && (
-            <>
-              <Login
-                open={loginModalOpen}
-                onOpenChange={setLoginModalOpen}
-                onSwitchToSignup={handleSwitchToSignup}
-              />
-              <Signup
-                open={signupModalOpen}
-                onOpenChange={setSignupModalOpen}
-                onSwitchToLogin={handleSwitchToLogin}
-              />
-            </>
-          )}
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-foreground"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
 
         {/* Mobile Menu */}
@@ -164,65 +162,52 @@ const Navbar = () => {
             <Link
               to="/"
               onClick={() => setIsMenuOpen(false)}
-              className={`block py-2 ${isActive("/")
-                ? "text-primary font-semibold"
-                : "text-muted-foreground"
+              className={`block py-2 ${isActive("/") ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
             >
               Home
             </Link>
+
             <div className="space-y-2">
               <div className="text-sm font-semibold text-muted-foreground">Services</div>
+
               <Link
                 to="/solar"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 pl-4 ${isActive("/solar")
-                  ? "text-primary font-semibold"
-                  : "text-muted-foreground"
+                className={`block py-2 pl-4 ${isActive("/solar") ? "text-primary font-semibold" : "text-muted-foreground"
                   }`}
               >
                 Solar Solutions
               </Link>
+
               <Link
                 to="/electronics"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 pl-4 ${isActive("/electronics")
-                  ? "text-primary font-semibold"
-                  : "text-muted-foreground"
+                className={`block py-2 pl-4 ${isActive("/electronics") ? "text-primary font-semibold" : "text-muted-foreground"
                   }`}
               >
                 Electronics
               </Link>
+
               <Link
                 to="/electrical"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 pl-4 ${isActive("/electrical")
-                  ? "text-primary font-semibold"
-                  : "text-muted-foreground"
+                className={`block py-2 pl-4 ${isActive("/electrical") ? "text-primary font-semibold" : "text-muted-foreground"
                   }`}
               >
                 Electrical Products
               </Link>
             </div>
+
             <Link
               to="/privacy"
               onClick={() => setIsMenuOpen(false)}
-              className={`block py-2 ${isActive("/privacy")
-                ? "text-primary font-semibold"
-                : "text-muted-foreground"
+              className={`block py-2 ${isActive("/privacy") ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
             >
               Privacy Policy
             </Link>
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                window.open("https://maps.app.goo.gl/d2a9PjhA73JXk8io9", "_blank");
-              }}
-              className="block py-2 text-left text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Location
-            </button>
+
             {isLoggedIn ? (
               <div className="flex flex-col space-y-2">
                 {user?.is_verified == 1 && (
@@ -249,6 +234,7 @@ const Navbar = () => {
                 >
                   Login
                 </Button>
+
                 <Button
                   variant="outline"
                   size="sm"
