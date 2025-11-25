@@ -1,3 +1,0 @@
-- [x] Add Location button in mobile navbar before hamburger button
-- [x] Remove Location button from mobile menu
-- [x] Reduce gap between hamburger and location button on mobile

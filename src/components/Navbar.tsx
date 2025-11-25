@@ -251,6 +251,19 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      {/* Add Login and Signup modal dialogs */}
+      <>
+        <Login
+          open={loginModalOpen}
+          onOpenChange={setLoginModalOpen}
+          onSwitchToSignup={handleSwitchToSignup}
+        />
+        <Signup
+          open={signupModalOpen}
+          onOpenChange={setSignupModalOpen}
+          onSwitchToLogin={handleSwitchToLogin}
+        />
+      </>
     </nav>
   );
 };
